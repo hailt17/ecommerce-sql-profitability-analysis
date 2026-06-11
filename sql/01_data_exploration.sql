@@ -12,8 +12,6 @@ FROM e_commerce.ecom_sales;
 
 
 -- 02. Check sales table overview
--- COUNT(*) = number of order lines
--- COUNT(DISTINCT order_id) = number of actual orders
 SELECT
     COUNT(*) AS total_order_lines,
     COUNT(DISTINCT order_id) AS total_orders,
