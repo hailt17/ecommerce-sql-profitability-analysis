@@ -1,7 +1,0 @@
-E-commerce Profitability & Customer Analysis using SQL
-
-- Analyzed 51K+ e-commerce order-line records using SQL Server to evaluate sales, profit, discount impact, customer segments, product categories, and monthly performance.
-- Built SQL queries using JOIN, GROUP BY, CASE WHEN, CTE, HAVING, and window functions to identify key revenue drivers and profitability issues.
-- Found that high-discount orders generated 1.34M in sales but resulted in a 295.7K loss, with a -22.02% profit margin.
-- Identified Corporate Body care as the largest high-discount loss driver, generating 393.7K in sales but losing 93.8K in profit.
-- Created customer value segmentation to classify customers into High Value, Medium Value, Low Value, and Loss Making groups for business prioritization.
