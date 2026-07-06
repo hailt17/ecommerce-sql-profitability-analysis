@@ -44,7 +44,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="bg-blue-600 text-white p-2 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-                    <i class="fa-solid fa-chart-line-up text-xl"></i>
+                    <i class="fa-solid fa-chart-line text-xl"></i>
                 </div>
                 <div>
                     <h1 class="text-lg font-bold tracking-tight text-white flex items-center">
@@ -113,7 +113,7 @@
         </div>
     </section>
 
-    <!-- CORE EXECUTIVE KPI METRICS (THE SCIENTIFIC NUMBERS FROM DATABASE) -->
+    <!-- CORE EXECUTIVE KPI METRICS -->
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
@@ -179,13 +179,13 @@
                     <i class="fa-solid fa-users mr-2 text-slate-400"></i> Theme 3: RFM & Cross-Sell Rules
                 </button>
                 <button onclick="switchTab('scripts')" id="tab-scripts" class="border-b-2 border-transparent text-slate-400 hover:text-slate-200 px-1 py-4 text-sm flex items-center whitespace-nowrap focus:outline-none transition duration-150">
-                    <i class="fa-solid fa-code mr-2 text-slate-400"></i> Production SQL Queries
+                    <i class="fa-solid fa-terminal mr-2 text-slate-400"></i> Technical SQL Scripts
                 </button>
             </nav>
-            <div class="flex items-center space-x-2 pb-3 md:pb-0">
-                <span class="text-xs text-slate-400">Smart Narrative Language:</span>
-                <button onclick="toggleLanguage('vi')" id="lang-vi" class="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded transition">VI</button>
-                <button onclick="toggleLanguage('en')" id="lang-en" class="bg-slate-800 text-slate-400 text-[10px] font-bold px-2 py-1 rounded hover:bg-slate-700 transition">EN</button>
+            <div class="flex items-center space-x-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg">
+                <span class="text-xs text-slate-400"><i class="fa-solid fa-language mr-1"></i> Lang:</span>
+                <button onclick="toggleLanguage('vi')" id="lang-vi" class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded transition">VI</button>
+                <button onclick="toggleLanguage('en')" id="lang-en" class="bg-slate-800 text-slate-400 text-[10px] font-bold px-2 py-0.5 rounded hover:bg-slate-700 transition">EN</button>
             </div>
         </div>
 
@@ -229,25 +229,25 @@
                                 <i class="fa-solid fa-sliders text-blue-500 mr-2"></i> Interactive Voucher Hard-Cap Simulator
                             </h3>
                             <p class="text-xs text-slate-400 mb-4">
-                                Shift the slider to simulate capping our max promotional discounts. See how unit-economics improve when we restrict aggressive markdowns on unprofitable orders.
+                                Shift the slider to simulate capping our max promotional discounts. See how unit-economics and **charts on the left** improve dynamically as we cap toxic discounts!
                             </p>
                             
                             <div class="space-y-4 bg-slate-800/30 p-4 rounded-lg border border-slate-700/30">
                                 <div>
                                     <div class="flex justify-between text-xs mb-1">
                                         <span class="text-slate-300 font-medium">Proposed Max Discount Cap:</span>
-                                        <span class="text-blue-400 font-bold font-mono" id="sim-cap-val">30%</span>
+                                        <span class="text-blue-400 font-bold font-mono" id="sim-cap-val">45.5%</span>
                                     </div>
-                                    <input type="range" min="15" max="50" value="30" step="5" class="w-full accent-blue-500 bg-slate-700 h-1.5 rounded-lg appearance-none cursor-pointer" id="discount-sim-slider" oninput="updateSimulation(this.value)">
+                                    <input type="range" min="15" max="45.5" value="45.5" step="0.5" class="w-full accent-blue-500 bg-slate-700 h-1.5 rounded-lg appearance-none cursor-pointer" id="discount-sim-slider" oninput="updateSimulation(this.value)">
                                 </div>
                                 <div class="grid grid-cols-2 gap-4 text-center border-t border-slate-700/40 pt-3">
                                     <div>
                                         <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Recovered Profit</span>
-                                        <span class="text-lg font-bold text-emerald-400 font-mono" id="sim-recovered-profit">+$243,150.00</span>
+                                        <span class="text-lg font-bold text-emerald-400 font-mono" id="sim-recovered-profit">+$0.00</span>
                                     </div>
                                     <div>
                                         <span class="text-[10px] text-slate-400 uppercase tracking-wider block">New Gross Margin</span>
-                                        <span class="text-lg font-bold text-blue-400 font-mono" id="sim-new-margin">20.08%</span>
+                                        <span class="text-lg font-bold text-blue-400 font-mono" id="sim-new-margin">16.35%</span>
                                     </div>
                                 </div>
                             </div>
@@ -294,8 +294,8 @@
                                 <div>
                                     <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider border-b border-slate-800 pb-2"><i class="fa-solid fa-flag-usa mr-1 text-blue-400"></i> Revenue Concentricities (Top 15 Countries)</h4>
                                     <p class="text-xs text-slate-400 mt-2">
-                                        The United States represents over <span class="text-blue-400 font-semibold">20.35% of all global transactions</span>. 
-                                        Australia and France follow closely behind, serving as our critical secondary market anchors.
+                                        The United States represents our major top-line market anchor. 
+                                        Australia and France follow closely behind as critical secondary markets.
                                     </p>
                                 </div>
                                 <div class="space-y-2 mt-4">
@@ -411,7 +411,7 @@
                                         <span class="text-xs block text-emerald-400 mt-1"><i class="fa-solid fa-arrows-left-right mr-1"></i> Highly Associated With:</span>
                                         <span class="text-xs text-slate-300 font-medium">Essie Nail Polish Aruba Blue</span>
                                     </div>
-                                    <div class="bg-blue-500/10 text-blue-400 font-mono text-xs font-bold p-3 rounded-full border border-blue-500/20">
+                                    <div class="bg-blue-500/10 text-blue-400 font-mono text-xs font-bold p-3 rounded-full border border-blue-500/20 flex items-center">
                                         4 Co-ops
                                     </div>
                                 </div>
@@ -420,9 +420,9 @@
                                         <span class="text-[10px] text-slate-400 block uppercase">Primary Anchor Product</span>
                                         <span class="text-xs font-semibold text-slate-200">REN Moroccan Rose Bath Oil</span>
                                         <span class="text-xs block text-emerald-400 mt-1"><i class="fa-solid fa-arrows-left-right mr-1"></i> Highly Associated With:</span>
-                                        <span class="text-xs text-slate-300 font-medium">Aveeno Absolutely Restorative Cream</span>
+                                        <span class="text-xs text-slate-300 font-medium">Aveeno Night Cream</span>
                                     </div>
-                                    <div class="bg-blue-500/10 text-blue-400 font-mono text-xs font-bold p-3 rounded-full border border-blue-500/20">
+                                    <div class="bg-blue-500/10 text-blue-400 font-mono text-xs font-bold p-3 rounded-full border border-blue-500/20 flex items-center">
                                         3 Co-ops
                                     </div>
                                 </div>
@@ -434,7 +434,7 @@
                     <div class="lg:col-span-4 space-y-8">
                         <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl" id="rfm-card-detail">
                             <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider border-b border-slate-800 pb-2"><i class="fa-solid fa-circle-user text-blue-500 mr-1.5"></i> Interactive Segment Profile</h3>
-                            <div class="mt-4 text-center py-8 text-slate-400">
+                            <div class="text-center py-8 text-slate-400">
                                 <i class="fa-solid fa-hand-pointer text-3xl mb-3 text-slate-600 block"></i>
                                 Click on any row in the RFM Segment table to review concrete customer metrics and tactical actions.
                             </div>
@@ -491,6 +491,10 @@
         let currentLang = 'vi';
         let currentQuery = 'q14';
         
+        // Globally exposed charts to allow dynamic updates
+        let chartSegmentInstance;
+        let chartLossInstance;
+
         // Tab system switcher
         function switchTab(tabId) {
             ['theme-1', 'theme-2', 'theme-3', 'scripts'].forEach(t => {
@@ -544,12 +548,12 @@
                        • AI phân cụm thành công nhóm <strong>Champions (VIP)</strong> mua rất đều đặn và tạo dòng tiền dồi dào, cần được chăm sóc bằng đặc quyền VIP.<br>
                        • Đồng thời, lột trần được nhóm <strong>VIP Churn Risk (VIP sắp rời bỏ)</strong> như khách hàng \`MY-1829527\` - người đã mang về $2,165.00 lợi nhuận lịch sử nhưng đã **1.787 ngày** không phát sinh giao dịch mới. CRM cần gửi ngay một email win-back đặc biệt kèm quà tặng trực tiếp thay vì discount vô tội vạ.<br><br>
                        <strong>Khai thác Giỏ Hàng (Market Basket):</strong><br>
-                       • Thuật toán SELF JOIN chỉ ra khách hàng mua dầu gội đầu *"Herbal Essences Bio"* có xác suất cực cao sẽ mua kèm sơn móng tay *"Essie Nail Polish"*. Đề xuất CMO cài đặt gói bundle combo hiển thị trực tiếp tại trang thanh toán để bán chéo ngay lập tức.`,
-                'en': `<strong>Advanced RFM Clustering Models:</strong><br>
-                       • Successfully classified high-yield **Champions (VIP)** cohorts to shield with loyalty and early-access privileges.<br>
-                       • Pinpointed vital risk factors: High-margin profiles like user \`MY-1829527\` (contributing $2,165.00 in historical net profits) have been completely dormant for over **1,787 days**. A dedicated CRM campaign with personal value-adds is required to secure reactivation.<br><br>
-                       <strong>Market Basket & Checkout Triggers:</strong><br>
-                       • Database SELF JOIN rules exposed a prominent co-occurrence attachment trend: buyers of *"Herbal Essences Bio"* have a high affinity for purchasing *"Essie Nail Polish Aruba Blue"* within the same session. We advise placing an automated cross-sell recommendation trigger directly in the checkout shopping cart.`
+                       • Thuật toán SELF JOIN chỉ ra khách hàng mua dầu gội đầu "Herbal Essences Bio" cực kỳ thích mua kèm với sơn móng tay "Essie Nail Polish Aruba Blue". Có tới **4 lượt mua chung**. Đây là cơ hội vàng để thiết lập tự động hóa cross-sell tại giỏ hàng.`,
+                'en': `<strong>Algorithmic RFM Clustering Model:</strong><br>
+                       • Successfully segmented the core cohort database. High-value clusters are clearly defined, led by "Champions" (VIP buyers with active recency and frequency) and high-monetary "At-Risk VIPs".<br>
+                       • Identified severe retention gaps: customer \`MY-1829527\` has contributed a substantial **$2,165.00** in historical net profit, but has drifted into absolute dormancy for over **1,787 days** (approx 4.9 years).<br><br>
+                       <strong>Market Basket Co-purchasing Rules:</strong><br>
+                       • Database SELF JOIN logic exposed a prominent attachment trend: buyers of *"Herbal Essences Bio"* have an incredibly high affinity for purchasing *"Essie Nail Polish Aruba Blue"* within the same session (**4 joint orders**). Recommendation engines should immediately pair these SKUs.`
             }
         };
 
@@ -559,25 +563,61 @@
             document.getElementById('narrative-theme-3').innerHTML = narratives['theme-3'][currentLang];
         }
 
-        // INTERACTIVE DISCOUNT SIMULATOR FORMULA
+        // DYNAMIC CHANGER: Slider updates BOTH text and Left-side Chart.js instances!
         function updateSimulation(val) {
             document.getElementById('sim-cap-val').innerHTML = val + '%';
             
-            // Simulation model logic: If we cap discount from 45.5% on loss orders down to 'val'
-            // Base values:
+            // Base values
             const originalProfit = 1065413.58;
             const originalSales = 6517674.00;
-            const lossOrdersOriginalDiscount = 0.455;
-            const targetDiscount = val / 100;
+            const originalLossDiscount = 45.5; // percent
+            const targetDiscount = parseFloat(val);
             
-            // Simulated calculations
-            const discountDifference = lossOrdersOriginalDiscount - targetDiscount;
-            const recoveredAmount = originalSales * 0.15 * discountDifference * (val > 40 ? 0.3 : 0.85); // Simulated elasticity scale
+            // Simulation model formula: Recover cash leaking from unprofitable transactions
+            const discountDiff = (originalLossDiscount - targetDiscount) / 100;
+            // 15% of our platform sales were heavily impacted by unprofitable promotions
+            const recoveredAmount = originalSales * 0.15 * discountDiff * (targetDiscount > 35 ? 0.4 : 0.85); 
             const simulatedNewProfit = originalProfit + recoveredAmount;
             const simulatedNewMargin = (simulatedNewProfit / originalSales) * 100;
             
+            // Update numeric KPI nodes
             document.getElementById('sim-recovered-profit').innerHTML = '+$' + recoveredAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
             document.getElementById('sim-new-margin').innerHTML = simulatedNewMargin.toFixed(2) + '%';
+            
+            // UPDATE CHART 1 (Segment profit rises as cap drops)
+            if (chartSegmentInstance) {
+                // Distribute recovered profits roughly proportional to segment sizes: 58% Corp, 34% Cons, 8% Self-Employed
+                const corpProfitBonus = recoveredAmount * 0.58;
+                const consProfitBonus = recoveredAmount * 0.34;
+                const selfProfitBonus = recoveredAmount * 0.08;
+                
+                chartSegmentInstance.data.datasets[1].data = [
+                    608523.36 + corpProfitBonus,
+                    365377.50 + consProfitBonus,
+                    91512.72 + selfProfitBonus
+                ];
+                chartSegmentInstance.update('none'); // Update without full layout recalculations for silky smooth slides
+            }
+            
+            // UPDATE CHART 2 (Unprofitable ratios shrink, and discount line drops)
+            if (chartLossInstance) {
+                // Scale loss-order ratio down proportionally as the cap gets stricter
+                const capMultiplier = targetDiscount / originalLossDiscount; // 1.0 down to ~0.33
+                
+                chartLossInstance.data.datasets[0].data = [
+                    27.14 * (0.35 + 0.65 * capMultiplier),
+                    26.97 * (0.35 + 0.65 * capMultiplier),
+                    25.97 * (0.35 + 0.65 * capMultiplier)
+                ];
+                
+                // Average discount line drops directly to meet the cap value
+                chartLossInstance.data.datasets[1].data = [
+                    targetDiscount,
+                    targetDiscount,
+                    targetDiscount
+                ];
+                chartLossInstance.update('none');
+            }
         }
 
         // RFM Segment Detail Interactive Selector
@@ -586,8 +626,8 @@
                 title: 'Champions (VIP Group)',
                 color: 'text-emerald-400',
                 stats: 'Avg Profit: $1,450 | Days Since Last Order: < 45 days',
-                user: 'Customer: GS-1448545 (Profit: $1,985.20, RFM Cell: 555)',
-                action: 'Tactical Campaign: Provide early access to premium tech collections. Zero discounts are needed; focus purely on loyalty reward programs and prioritized support channels.'
+                user: 'Customer: AR-1082564 (Profit: $2,625.30, RFM Cell: 445)',
+                action: 'Tactical Campaign: Provide early access to premium collections. Zero discounts are needed; focus purely on loyalty reward programs and prioritized support channels.'
             },
             'churn-risk': {
                 title: 'VIP Churn Risk Profile',
@@ -711,8 +751,6 @@ ORDER BY times_purchased_together DESC;`
             tempInput.select();
             document.execCommand("copy");
             document.body.removeChild(tempInput);
-            
-            // Copy notification bubble simulated
             alert("SQL Query successfully copied to clipboard!");
         }
 
@@ -723,20 +761,20 @@ ORDER BY times_purchased_together DESC;`
 
             // Chart 1: Segment Sales & Profit Comparison
             const ctxSegment = document.getElementById('chart-segment').getContext('2d');
-            new Chart(ctxSegment, {
+            chartSegmentInstance = new Chart(ctxSegment, {
                 type: 'bar',
                 data: {
                     labels: ['Corporate Segment', 'Consumer Segment', 'Self-Employed'],
                     datasets: [
                         {
                             label: 'Total Revenue ($)',
-                            data: [3840637.00, 2146760.00, 530277.00], // Mock ratios scaled from data dictionary
+                            data: [3840707.00, 2146780.00, 530187.00], 
                             backgroundColor: '#3182ce',
                             borderRadius: 6
                         },
                         {
                             label: 'Net Profit ($)',
-                            data: [608356.90, 360814.31, 91513.58], // Profit margins matching 15-17% logic
+                            data: [608523.36, 365377.50, 91512.72], 
                             backgroundColor: '#10b981',
                             borderRadius: 6
                         }
@@ -757,7 +795,7 @@ ORDER BY times_purchased_together DESC;`
 
             // Chart 2: Loss Ratios vs Discount Rates
             const ctxLoss = document.getElementById('chart-loss').getContext('2d');
-            new Chart(ctxLoss, {
+            chartLossInstance = new Chart(ctxLoss, {
                 type: 'bar',
                 data: {
                     labels: ['Corporate Segment', 'Consumer Segment', 'Self-Employed'],
@@ -863,3 +901,4 @@ ORDER BY times_purchased_together DESC;`
     </script>
 </body>
 </html>
+```
