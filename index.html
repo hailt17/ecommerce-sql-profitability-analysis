@@ -759,7 +759,7 @@ ORDER BY times_purchased_together DESC;`
             renderNarratives();
             document.getElementById('sql-code-display').textContent = sqlQueries['q14'];
 
-            // Chart 1: Segment Sales & Profit Comparison
+            // Chart 1: Segment Sales & Profit Comparison (Upgraded to Dual Y-Axes)
             const ctxSegment = document.getElementById('chart-segment').getContext('2d');
             chartSegmentInstance = new Chart(ctxSegment, {
                 type: 'bar',
@@ -770,12 +770,14 @@ ORDER BY times_purchased_together DESC;`
                             label: 'Total Revenue ($)',
                             data: [3840707.00, 2146780.00, 530187.00], 
                             backgroundColor: '#3182ce',
+                            yAxisID: 'y',
                             borderRadius: 6
                         },
                         {
                             label: 'Net Profit ($)',
                             data: [608523.36, 365377.50, 91512.72], 
                             backgroundColor: '#10b981',
+                            yAxisID: 'y1',
                             borderRadius: 6
                         }
                     ]
@@ -788,7 +790,19 @@ ORDER BY times_purchased_together DESC;`
                     },
                     scales: {
                         x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
-                        y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } }
+                        y: { 
+                            grid: { color: '#1e293b' }, 
+                            ticks: { color: '#94a3b8' },
+                            title: { display: true, text: 'Total Revenue ($)', color: '#3182ce', font: { size: 10, weight: 'bold' } }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: { color: '#94a3b8' },
+                            title: { display: true, text: 'Net Profit ($)', color: '#10b981', font: { size: 10, weight: 'bold' } }
+                        }
                     }
                 }
             });
