@@ -1,43 +1,20 @@
-# Key Insights
+# Comprehensive Business Insights - Xóm E-Com Audit Report
 
-## 1. Data Understanding
+## 1. Executive Margin Squeeze & Discount Cannibalization
+The platform captured a total revenue of **$6,517,674.00**, but net profit concluded at **$1,065,413.58**, exposing a vulnerable **16.35%** platform gross margin. 
 
-The dataset contains 51,290 order lines, representing 25,728 unique orders and 17,415 customers. Since the sales table is at order-line level, order count must be calculated using `COUNT(DISTINCT order_id)` instead of `COUNT(*)`.
+Our core financial leak is driven by toxic promotional markdowns. A deep-dive via conditional aggregation proved that **between 26% and 27% of all lifetime orders were fulfilled at an absolute loss**. Transactions that generated negative net profit carried a massive average discount rate of **45.5%**. This structurally confirms that marketing markdown strategies are cannibalizing standard product margins rather than driving profitable scaling increments.
 
-During the join quality check, all customer records were matched successfully. However, 2 sales records had unmatched product information and 2 records had unmatched region information. These were flagged as minor data quality issues before further analysis.
+## 2. Segment & Category P&L Realities
+*   **The Corporate Trap:** Historically viewed as the platform's primary growth engine due to its dominant **$3,840,707.00** revenue contribution, the *Corporate* segment actually produces the lowest overall net margin (**15.84%**). 
+*   **The Efficiency Winner:** The *Self-Employed* bracket represents our most secure profit pocket, securing a **17.26%** margin.
+*   **Category Anchors:** Within the dominant *Body care* product category, *"Herbal Essences Bio"* acts as the premier platform anchor SKU, securing a standalone profit of **$9,089.67**.
 
-## 2. Overall Business Performance
+## 3. Geographic Velocity & Time-Series Health
+*   **Regional Dominance:** The *United States* is our core geographical baseline, yielding **$1,326,577.00** in gross revenue from 2,501 unique buyers.
+*   **Continental Efficiencies:** *Europe* stands out as the most capital-efficient continent with a premium **22.30%** profit margin, whereas *Asia Pacific* dilutes overall platform profitability with an underperforming **12.48%** margin.
+*   **Time-Series Trajectory:** The platform maintains an explosive year-end rolling momentum into late 2023, highlighted by strong monthly YoY revenue expansions: October (**+39.38%**), November (**+38.12%**), and December (**+29.05%**). However, a distinct structural contraction in July 2023 (**-4.83%** YoY) signals clear seasonal operational vulnerabilities.
 
-The dataset generated total sales of 6,517,674 and total profit of 1,065,413.58, with an overall profit margin of 16.35%. The average discount was 14.29%.
-
-## 3. Customer Segment Performance
-
-Corporate customers generated the highest sales and profit, making them the main revenue driver. However, Corporate also had the lowest profit margin compared with Consumer and Self-Employed customers.
-
-## 4. Product Category Performance
-
-Body care was the strongest product category in terms of sales and profit. Face care achieved the highest profit margin despite having smaller sales volume. Home and Accessories generated strong sales but showed the lowest margin among major categories.
-
-## 5. Discount Impact on Profitability
-
-Discount level showed a clear negative relationship with profitability. No-discount orders achieved the highest profit margin at 31.30%, while high-discount orders generated 1.34M in sales but resulted in a loss of 295.7K, with a -22.02% profit margin.
-
-## 6. High-Discount Loss Drivers
-
-High-discount losses were concentrated in a small number of segment-category combinations. Corporate Body care was the largest loss driver, generating 393.7K in sales but losing 93.8K in profit with a -23.82% margin.
-
-Corporate customers also appeared in multiple high-loss groups, especially in Body care, Home and Accessories, Hair care, and Make up. This suggests that discount policies for Corporate accounts should be reviewed first.
-
-## 7. Customer-Level Profitability
-
-Some high-sales customers generated negative profit, indicating that revenue volume alone is not sufficient to evaluate customer value. Several customers with sales above 5K had negative margins, suggesting the need to review discount levels, product mix, or customer-specific pricing.
-
-Customer value segmentation helped classify customers into High Value, Medium Value, Low Value, and Loss Making groups.
-
-## 8. Business Recommendations
-
-1. Review high-discount campaigns, especially for Corporate customers.
-2. Prioritize investigation of Corporate Body care, as it is the largest loss driver under high discount.
-3. Avoid evaluating performance by sales alone; profit margin should be monitored together with sales.
-4. Segment customers by value tier to separate profitable customers from loss-making customers.
-5. Review product-category profitability before expanding discount campaigns.
+## 4. Algorithmic Customer Segmentation (RFM) & Attachment Rules
+*   **VIP Churn Risk:** The localized RFM statistical tiles flagged severe lifecycle retention gaps. High-value customer clusters are currently drifting into dormancy; accounts such as `MY-1829527` contributed a substantial **$2,165.00** in historical profit but have neglected platform touchpoints for over **1,787 days**.
+*   **Market Basket Rules:** Asynchronous `SELF JOIN` operations exposed an active product attachment correlation. *"Herbal Essences Bio"* and *"Essie Nail Polish Aruba Blue Shimmering Cobalt"* recorded the highest transaction co-occurrence rate on the platform with **4 joint orders**, serving as a prime baseline for automated recommendation funnels.
