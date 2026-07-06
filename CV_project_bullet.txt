@@ -1,7 +1,7 @@
-E-commerce Profitability & Customer Analysis using SQL
+E-commerce Profitability & Customer LTV Optimization using SQL Server
 
-- Analyzed 51K+ e-commerce order-line records using SQL Server to evaluate sales, profit, discount impact, customer segments, product categories, and monthly performance.
-- Built SQL queries using JOIN, GROUP BY, CASE WHEN, CTE, HAVING, and window functions to identify key revenue drivers and profitability issues.
-- Found that high-discount orders generated 1.34M in sales but resulted in a 295.7K loss, with a -22.02% profit margin.
-- Identified Corporate Body care as the largest high-discount loss driver, generating 393.7K in sales but losing 93.8K in profit.
-- Created customer value segmentation to classify customers into High Value, Medium Value, Low Value, and Loss Making groups for business prioritization.
+- Analyzed a global B2C e-commerce dataset with over 101K transactional records using SQL Server to diagnose margin dilution and identify key profitability constraints.
+- Discovered that aggressive marketing markdowns cannibalized unit-economics, revealing that 26% to 27% of all orders ran at a net loss due to an excessive average discount rate of 45.5%.
+- Formulated data-driven recommendations to enforce a 30% Hard-Cap promotion ceiling on low-margin segments (Corporate) and categories to restore sustainable product profit margins.
+- Engineered an advanced Time-Series analysis to map monthly rolling Year-over-Year (YoY) revenue velocities, isolating a seasonal structural contraction in July 2023 (-4.83% YoY).
+- Developed a comprehensive RFM (Recency, Frequency, Monetary) Clustering Model using NTILE(5) and implemented a Market Basket Analysis via asynchronous SELF JOINs to isolate churn-risk VIP cohorts and reveal cross-selling pairing triggers.
